@@ -1,0 +1,312 @@
+{
+    "type": "Live2D Model Setting",
+    "name": "kasumi_event128",
+    "model": "moc/kasumi_event128.moc",
+    "textures": [
+        "moc/kasumi_event128.1024/texture_00.png",
+        "moc/kasumi_event128.1024/texture_01.png"
+    ],
+    "layout": {
+        "center_x": 0,
+        "width": 2.4,
+        "y": 1.2
+    },
+    "hit_areas": [
+        {
+            "name": "head",
+            "id": "D_PSD.36"
+        }
+    ],
+    "motions": {
+        "idle": [
+            {
+                "file": "mtn/gacha01.mtn"
+            },
+            {
+                "file": "mtn/bye01.mtn"
+            },
+            {
+                "file": "mtn/cry01.mtn"
+            },
+            {
+                "file": "mtn/cry02.mtn"
+            },
+            {
+                "file": "mtn/cry03.mtn"
+            },
+            {
+                "file": "mtn/hukumi01.mtn"
+            },
+            {
+                "file": "mtn/idle02.mtn"
+            },
+            {
+                "file": "mtn/jaan01.mtn"
+            },
+            {
+                "file": "mtn/kime01.mtn"
+            },
+            {
+                "file": "mtn/nf01.mtn"
+            },
+            {
+                "file": "mtn/nf02.mtn"
+            },
+            {
+                "file": "mtn/nf03.mtn"
+            },
+            {
+                "file": "mtn/nf04.mtn"
+            },
+            {
+                "file": "mtn/nf05.mtn"
+            },
+            {
+                "file": "mtn/nf_left01.mtn"
+            },
+            {
+                "file": "mtn/nf_right01.mtn"
+            },
+            {
+                "file": "mtn/niyaniya01.mtn"
+            },
+            {
+                "file": "mtn/nnf01.mtn"
+            },
+            {
+                "file": "mtn/nnf02.mtn"
+            },
+            {
+                "file": "mtn/nnf03.mtn"
+            },
+            {
+                "file": "mtn/nnf04.mtn"
+            },
+            {
+                "file": "mtn/nnf05.mtn"
+            },
+            {
+                "file": "mtn/nnf_left01.mtn"
+            },
+            {
+                "file": "mtn/nnf_right01.mtn"
+            },
+            {
+                "file": "mtn/oowarai01.mtn"
+            },
+            {
+                "file": "mtn/sad01.mtn"
+            },
+            {
+                "file": "mtn/sad02.mtn"
+            },
+            {
+                "file": "mtn/serious01.mtn"
+            },
+            {
+                "file": "mtn/serious02.mtn"
+            },
+            {
+                "file": "mtn/sing01.mtn"
+            },
+            {
+                "file": "mtn/sleep01.mtn"
+            },
+            {
+                "file": "mtn/sleep02.mtn"
+            },
+            {
+                "file": "mtn/smile01.mtn"
+            },
+            {
+                "file": "mtn/smile01_ingameV2.mtn"
+            },
+            {
+                "file": "mtn/smile02.mtn"
+            },
+            {
+                "file": "mtn/sleep01.mtn"
+            },
+            {
+                "file": "mtn/sleep02.mtn"
+            },
+            {
+                "file": "mtn/sneeze01.mtn"
+            },
+            {
+                "file": "mtn/sneeze02.mtn"
+            },
+            {
+                "file": "mtn/surprised01.mtn"
+            },
+            {
+                "file": "mtn/surprised02.mtn"
+            },
+            {
+                "file": "mtn/idle01.mtn"
+            },
+            {
+                "file": "mtn/smile03.mtn"
+            },
+            {
+                "file": "mtn/smile04.mtn"
+            },
+            {
+                "file": "mtn/angry01.mtn"
+            },
+            {
+                "file": "mtn/eeto01.mtn"
+            },
+            {
+                "file": "mtn/gattsu01.mtn"
+            },
+            {
+                "file": "mtn/surprised03.mtn"
+            },
+            {
+                "file": "mtn/shame01.mtn"
+            },
+            {
+                "file": "mtn/wink01.mtn"
+            }
+        ]
+    },
+    "expressions": [
+        {
+            "name": "angry01",
+            "file": "expressions/angry01.exp.json"
+        },
+        {
+            "name": "cry01",
+            "file": "expressions/cry01.exp.json"
+        },
+        {
+            "name": "cry03",
+            "file": "expressions/cry03.exp.json"
+        },
+        {
+            "name": "default",
+            "file": "expressions/default.exp.json"
+        },
+        {
+            "name": "f01",
+            "file": "expressions/f01.exp.json"
+        },
+        {
+            "name": "f02",
+            "file": "expressions/f02.exp.json"
+        },
+        {
+            "name": "f03",
+            "file": "expressions/f03.exp.json"
+        },
+        {
+            "name": "f04",
+            "file": "expressions/f04.exp.json"
+        },
+        {
+            "name": "f05",
+            "file": "expressions/f05.exp.json"
+        },
+        {
+            "name": "f06",
+            "file": "expressions/f06.exp.json"
+        },
+        {
+            "name": "f07",
+            "file": "expressions/f07.exp.json"
+        },
+        {
+            "name": "f08",
+            "file": "expressions/f08.exp.json"
+        },
+        {
+            "name": "f09",
+            "file": "expressions/f09.exp.json"
+        },
+        {
+            "name": "f10",
+            "file": "expressions/f10.exp.json"
+        },
+        {
+            "name": "f11",
+            "file": "expressions/f11.exp.json"
+        },
+        {
+            "name": "f12",
+            "file": "expressions/f12.exp.json"
+        },
+        {
+            "name": "f13",
+            "file": "expressions/f13.exp.json"
+        },
+        {
+            "name": "f14",
+            "file": "expressions/f14.exp.json"
+        },
+        {
+            "name": "f15",
+            "file": "expressions/f15.exp.json"
+        },
+        {
+            "name": "f16",
+            "file": "expressions/f16.exp.json"
+        },
+        {
+            "name": "f17",
+            "file": "expressions/f17.exp.json"
+        },
+        {
+            "name": "f18",
+            "file": "expressions/f18.exp.json"
+        },
+        {
+            "name": "idle01",
+            "file": "expressions/idle01.exp.json"
+        },
+        {
+            "name": "kime01",
+            "file": "expressions/kime01.exp.json"
+        },
+        {
+            "name": "sad01",
+            "file": "expressions/sad01.exp.json"
+        },
+        {
+            "name": "serious01",
+            "file": "expressions/serious01.exp.json"
+        },
+        {
+            "name": "serious02",
+            "file": "expressions/serious02.exp.json"
+        },
+        {
+            "name": "shame01",
+            "file": "expressions/shame01.exp.json"
+        },
+        {
+            "name": "smile01",
+            "file": "expressions/smile01.exp.json"
+        },
+        {
+            "name": "smile02",
+            "file": "expressions/smile02.exp.json"
+        },
+        {
+            "name": "smile0.",
+            "file": "expressions/smile03.exp.json"
+        },
+        {
+            "name": "surprised01",
+            "file": "expressions/surprised01.exp.json"
+        }
+    ],
+    "physics": "moc/kasumi_event128.physics.json",
+    "loop_params": [
+        {
+            "id": "PARAM_LOOP",
+            "duration": "5000",
+            "type": 0
+        }
+    ]
+}
