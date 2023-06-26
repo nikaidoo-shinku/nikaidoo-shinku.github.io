@@ -1,1 +1,332 @@
-<!-- build time:Mon Jun 26 2023 11:11:19 GMT+0800 (中国标准时间) --><!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#FFF"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"><link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" type="application/rss+xml" title="リンクル" href="http://124.221.182.148/rss.xml"><link rel="alternate" type="application/atom+xml" title="リンクル" href="http://124.221.182.148/atom.xml"><link rel="alternate" type="application/json" title="リンクル" href="http://124.221.182.148/feed.json"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="/css/app.css?v=0.2.5"><meta name="keywords" content="笔记,react"><link rel="canonical" href="http://124.221.182.148/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/"><title>React：初识React - React - 前端 - 编程 | Rinkuru = リンクル = リンクルの雑貨屋</title><meta name="generator" content="Hexo 6.1.0"></head><body itemscope itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">React：初识React</h1><div class="meta"><span class="item" title="创建时间：2023-06-26 10:41:20"><span class="icon"><i class="ic i-calendar"></i> </span><span class="text">发表于</span> <time itemprop="dateCreated datePublished" datetime="2023-06-26T10:41:20+08:00">2023-06-26</time> </span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i> </span><span class="text">本文字数</span> <span>1</span> <span class="text">字</span> </span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i> </span><span class="text">阅读时长</span> <span>1 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span> <span class="line"></span> <span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">Rinkuru</a></li></ul><ul class="right"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div id="imgs" class="pjax"><img src="/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/assets/01.png"></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"/><use xlink:href="#gentle-wave" x="48" y="3"/><use xlink:href="#gentle-wave" x="48" y="5"/><use xlink:href="#gentle-wave" x="48" y="7"/></g></svg></div><main><div class="inner"><div id="main" class="pjax"><div class="article wrap"><div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i> <span><a href="/">首页</a></span><i class="ic i-angle-right"></i> <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/programs/" itemprop="item" rel="index" title="分类于 编程"><span itemprop="name">编程</span></a><meta itemprop="position" content="1"></span><i class="ic i-angle-right"></i> <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/programs/web/" itemprop="item" rel="index" title="分类于 前端"><span itemprop="name">前端</span></a><meta itemprop="position" content="2"></span><i class="ic i-angle-right"></i> <span class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/programs/web/React/" itemprop="item" rel="index" title="分类于 React"><span itemprop="name">React</span></a><meta itemprop="position" content="3"></span></div><article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="http://124.221.182.148/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.png"><meta itemprop="name" content="Rinkuru"><meta itemprop="description" content="リンクルの雑貨屋, 薄っぺらな天才は、才能が透けて見える。天才は、才能を忘れさせる。"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="リンクル"></span><div class="body md" itemprop="articleBody"><h3><a class="anchor" href="#">#</a></h3><div class="tags"><a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a> <a href="/tags/react/" rel="tag"><i class="ic i-tag"></i> react</a></div></div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i> </span><span class="text">更新于</span> <time title="修改时间：2023-06-26 11:09:26" itemprop="dateModified" datetime="2023-06-26T11:09:26+08:00">2023-06-26</time></span></div><div class="reward"><button><i class="ic i-heartbeat"></i> 赞赏</button><p>请我喝[茶]~(￣▽￣)~*</p><div id="qr"><div><img data-src="/images/wechatpay.png" alt="Rinkuru 微信支付"><p>微信支付</p></div><div><img data-src="/images/alipay.png" alt="Rinkuru 支付宝"><p>支付宝</p></div></div></div><div id="copyright"><ul><li class="author"><strong>本文作者： </strong>Rinkuru <i class="ic i-at"><em>@</em></i>リンクル</li><li class="link"><strong>本文链接：</strong> <a href="http://124.221.182.148/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/" title="React：初识React">http://124.221.182.148/2023/06/26/React：初识React/</a></li><li class="license"><strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/2023/06/13/node%EF%BC%9Akoa%E6%A1%86%E6%9E%B6/" itemprop="url" rel="prev" data-background-image="&#x2F;2023&#x2F;06&#x2F;13&#x2F;node%EF%BC%9Akoa%E6%A1%86%E6%9E%B6&#x2F;assets&#x2F;01.png" title="node：koa框架"><span class="type">上一篇</span> <span class="category"><i class="ic i-flag"></i> node</span><h3>node：koa框架</h3></a></div><div class="item right"></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol></div><div class="related panel pjax" data-title="系列文章"><ul><li class="active"><a href="/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/" rel="bookmark" title="React：初识React">React：初识React</a></li></ul></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="image" itemprop="image" alt="Rinkuru" data-src="/images/avatar.png"><p class="name" itemprop="name">Rinkuru</p><div class="description" itemprop="description">薄っぺらな天才は、才能が透けて見える。天才は、才能を忘れさせる。</div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">67</span> <span class="name">文章</span></a></div><div class="item categories"><a href="/categories/"><span class="count">19</span> <span class="name">分类</span></a></div><div class="item tags"><a href="/tags/"><span class="count">20</span> <span class="name">标签</span></a></div></nav><div class="social"><span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL25pa2FpZG9vLXNoaW5rdQ==" title="https:&#x2F;&#x2F;github.com&#x2F;nikaidoo-shinku"><i class="ic i-github"></i></span> <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9zZXJpa2FfbmlpbWk=" title="https:&#x2F;&#x2F;twitter.com&#x2F;serika_niimi"><i class="ic i-twitter"></i></span></div><ul class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a><ul class="submenu"><li class="item"><a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a></li><li class="item"><a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a></li><li class="item"><a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a></li></ul></li><li class="item"><a href="/friends/" rel="section"><i class="ic i-heart"></i>番剧</a></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-magic"></i>链表</a><ul class="submenu"><li class="item"><a href="/links/" rel="section"><i class="ic i-sakura"></i>外链</a></li></ul></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-user"></i>关于</a><ul class="submenu"><li class="item"><a href="/about/" rel="section"><i class="ic i-star"></i>个人</a></li></ul></li></ul></div></div></div><ul id="quick"><li class="prev pjax"></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/Vue/" title="分类于 VUE">VUE</a></div><span><a href="/2023/04/27/VUE%EF%BC%9AVue2%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="VUE：Vue2基础语法">VUE：Vue2基础语法</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/typescript/" title="分类于 typescript">typescript</a></div><span><a href="/2022/03/25/typescript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A1-typescript%E5%9F%BA%E7%A1%80(1)/" title="typescript学习笔记：1.typescript基础(1)">typescript学习笔记：1.typescript基础(1)</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/htmlcss/" title="分类于 html+css">html+css</a></div><span><a href="/2023/04/06/CSS3%EF%BC%9A%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E5%8F%8A%E6%93%8D%E4%BD%9C/" title="CSS3：常用属性及操作">CSS3：常用属性及操作</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/typescript/" title="分类于 typescript">typescript</a></div><span><a href="/2022/03/27/typescript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A6-typescript%E5%9F%BA%E7%A1%80(6)/" title="typescript学习笔记：6.typescript基础(6)">typescript学习笔记：6.typescript基础(6)</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/javascript/" title="分类于 javascript">javascript</a></div><span><a href="/2022/04/09/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="JavaScript学习笔记：12.面向对象">JavaScript学习笔记：12.面向对象</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/javascript/" title="分类于 javascript">javascript</a></div><span><a href="/2022/04/13/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A16-ES6-%E8%AF%A6%E8%A7%A3/" title="JavaScript学习笔记：16.ES6(详解)">JavaScript学习笔记：16.ES6(详解)</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/javascript/" title="分类于 javascript">javascript</a></div><span><a href="/2023/04/20/ES6%EF%BC%9APromise/" title="ES6：Promise">ES6：Promise</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/htmlcss/" title="分类于 html+css">html+css</a></div><span><a href="/2022/02/20/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A11-flex%E5%B8%83%E5%B1%80/" title="前端学习笔记：11.flex布局">前端学习笔记：11.flex布局</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/Ajax/" title="分类于 Ajax">Ajax</a></div><span><a href="/2023/04/03/Ajax%EF%BC%9AAjax%E6%A6%82%E5%BF%B5%E5%8F%8A%E4%BD%BF%E7%94%A8/" title="Ajax：Ajax概念及使用">Ajax：Ajax概念及使用</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/jQ/" title="分类于 jQ">jQ</a></div><span><a href="/2023/03/30/jQ%EF%BC%9AjQuery%E4%BD%BF%E7%94%A8/" title="jQ：jQuery使用">jQ：jQuery使用</a></span></li></ul></div><div><h2>最新评论</h2><ul class="leancloud-recent-comment"></ul></div></div><div class="status"><div class="copyright">&copy; 2010 – <span itemprop="copyrightYear">2023</span> <span class="with-love"><i class="ic i-sakura rotate"></i> </span><span class="author" itemprop="copyrightHolder">Rinkuru @ Rinkuru</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i> </span><span title="站点总字数">553k 字</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="ic i-coffee"></i> </span><span title="站点阅读时长">8:23</span></div><div class="powered-by">基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span></div></div></div></footer></div><script data-config type="text/javascript">var LOCAL={path:"2023/06/26/React：初识React/",favicon:{show:"（●´3｀●）やれやれだぜ",hide:"(´Д｀)大変だ！"},search:{placeholder:"文章搜索",empty:"关于 「 ${query} 」，什么也没搜到",stats:"${time} ms 内找到 ${hits} 条结果"},valine:!0,fancybox:!0,copyright:'复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',ignores:[function(e){return e.includes("#")},function(e){return new RegExp(LOCAL.path+"$").test(e)}]}</script><script src="https://cdn.polyfill.io/v3/polyfill.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.0.2/pace.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script src="https://unpkg.com/whatwg-fetch@3.4.0/dist/fetch.umd.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/animejs/3.2.0/anime.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/algoliasearch/4.12.1/algoliasearch-lite.umd.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantsearch.js/4.39.0/instantsearch.production.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/lozad.js/1.16.0/lozad.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/quicklink/2.2.0/quicklink.umd.min.js"></script><script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/??jquery/3.5.1/jquery.min.js,fancybox/3.5.7/jquery.fancybox.min.js,justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" async></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.12.0/contrib/copy-tex.min.js" async></script><script src="https://unpkg.com/frappe-charts@1.5.0/dist/frappe-charts.min.iife.js"></script><script src="/js/app.js?v=0.2.5"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({pluginRootPath:"live2dw/",pluginJsPath:"lib/",pluginModelPath:"assets/",tagMode:!1,log:!1,model:{jsonPath:"/live2dw/assets/kasumi_event128.model.json"},display:{position:"right",width:100,height:200},mobile:{show:!0},react:{opacity:.6}})</script></body></html><!-- rebuild by hrmmi -->
+<!-- build time:Mon Jun 26 2023 17:43:10 GMT+0800 (中国标准时间) --><!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#FFF"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"><link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" type="application/rss+xml" title="リンクル" href="http://124.221.182.148/rss.xml"><link rel="alternate" type="application/atom+xml" title="リンクル" href="http://124.221.182.148/atom.xml"><link rel="alternate" type="application/json" title="リンクル" href="http://124.221.182.148/feed.json"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="/css/app.css?v=0.2.5"><meta name="keywords" content="笔记,react"><link rel="canonical" href="http://124.221.182.148/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/"><title>React：初识React - React - 前端 - 编程 | Rinkuru = リンクル = リンクルの雑貨屋</title><meta name="generator" content="Hexo 6.1.0"></head><body itemscope itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">React：初识React</h1><div class="meta"><span class="item" title="创建时间：2023-06-26 10:41:20"><span class="icon"><i class="ic i-calendar"></i> </span><span class="text">发表于</span> <time itemprop="dateCreated datePublished" datetime="2023-06-26T10:41:20+08:00">2023-06-26</time> </span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i> </span><span class="text">本文字数</span> <span>9.4k</span> <span class="text">字</span> </span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i> </span><span class="text">阅读时长</span> <span>9 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span> <span class="line"></span> <span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">Rinkuru</a></li></ul><ul class="right"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div id="imgs" class="pjax"><img src="/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/assets/01.png"></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"/><use xlink:href="#gentle-wave" x="48" y="3"/><use xlink:href="#gentle-wave" x="48" y="5"/><use xlink:href="#gentle-wave" x="48" y="7"/></g></svg></div><main><div class="inner"><div id="main" class="pjax"><div class="article wrap"><div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i> <span><a href="/">首页</a></span><i class="ic i-angle-right"></i> <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/programs/" itemprop="item" rel="index" title="分类于 编程"><span itemprop="name">编程</span></a><meta itemprop="position" content="1"></span><i class="ic i-angle-right"></i> <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/programs/web/" itemprop="item" rel="index" title="分类于 前端"><span itemprop="name">前端</span></a><meta itemprop="position" content="2"></span><i class="ic i-angle-right"></i> <span class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/programs/web/React/" itemprop="item" rel="index" title="分类于 React"><span itemprop="name">React</span></a><meta itemprop="position" content="3"></span></div><article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="http://124.221.182.148/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.png"><meta itemprop="name" content="Rinkuru"><meta itemprop="description" content="リンクルの雑貨屋, 薄っぺらな天才は、才能が透けて見える。天才は、才能を忘れさせる。"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="リンクル"></span><div class="body md" itemprop="articleBody"><h3 id="使用-jsx-书写标签语言"><a class="anchor" href="#使用-jsx-书写标签语言">#</a> 使用 JSX 书写标签语言</h3><ul><li><p>react 使用的是 jsx 语法 (JavaScriptXML) ，在原有的 js 基础上增加了 xml 语法 (严格标签语法单一型标签必须要有结束符号)。</p><pre><code class="language-react">      // const test = &lt;a href=&quot;http://www.bilibili.com&quot;&gt;hello&lt;/a&gt;
+      // 上面的 jsx 语法创建的 React 元素,本质上会被 babel 转译为 React.createElement()
+      
+        const test = React.createElement('a', &#123;
+            href: 'http://www.bilibili.com',
+            children: 'hello',
+            className: 'demo'
+        &#125;)
+
+        const div = React.createElement('div', &#123;
+            children: test
+        &#125;)
+</code></pre></li><li><p>编译时需要使用 babel 转义工具将 jsx 转化为 js。</p><pre><code class="language-react">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;./react.development.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./react-dom.development.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+    &lt;!-- 下面script type表示内部的代码使用上面在线转译工具转化为js代码 --&gt;
+    &lt;script type=&quot;text/babel&quot;&gt;
+
+        const app = document.getElementById('app')
+        const root = ReactDOM.createRoot(app)
+
+        // react 使用 jsx 语法(JavaScriptXML) 在原有的js基础上增加了xml语法(严格标签语法单一型标签必须要有结束符号)
+        const test = (&lt;div&gt;
+            &lt;h2&gt; Hello React &lt;/h2&gt;
+            &lt;p&gt; 我的第一个React Demo &lt;/p&gt;   
+        &lt;/div&gt;)
+
+        root.render(test)
+
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre></li><li><p>jsx 语法创建的 React 元素，本质上会被 babel 转译为 React.createElement ()</p></li><li><p>react 的本质上就是原生的 js</p></li><li><p>jsx 的语法，在任何 react 元素中，无论属性插值还是文本插值统一使用 &quot;{jsx 表达式}&quot;</p><ul><li><p>jsx 表达式：变量的引用、函数的调用、运算符、jsx 本身</p></li><li><p>声明变量 、条件控制语句 (if for while) 等等这些不属于 jsx 表达式</p><pre><code class="language-react">      let num = 7;
+
+      let h2 = &lt;h2&gt;hello&lt;/h2&gt;;
+
+      const demo = (
+        &lt;div&gt;
+          &lt;h2&gt;&#123;num&#125;&lt;/h2&gt;
+          &lt;p className=&#123;num &gt;= 18 ? &quot;active&quot; : &quot;&quot;&#125;&gt;
+            &#123;num &gt;= 18 ? &quot;成年&quot; : &quot;未成年&quot;&#125;
+          &lt;/p&gt;
+          &lt;div&gt;&#123;h2&#125;&lt;/div&gt;
+        &lt;/div&gt;
+      );
+</code></pre></li><li><p>jsx 的文本插值语法是自动预防 xss 攻击</p><ul><li><p>如果需要将字符串以 html 元素的形式插入到 React 元素节点内部需要使用一个特殊属性 dangerouslySetInnerHTML</p><pre><code class="language-react">      let str = &quot;&lt;h2&gt;hello&lt;/h2&gt;&quot;;
+
+      const element = &lt;div&gt;&#123;str&#125;&lt;/div&gt;; // 渲染时 str 变量的值将会以文本节点字符串的形式插入到页面中
+
+      // 如果需要将字符串以html元素的形式插入到React元素节点内部需要使用一个特殊属性
+      const element1 = &lt;div dangerouslySetInnerHTML=&#123;&#123; __html: str &#125;&#125;&gt;&lt;/div&gt;;
+</code></pre></li></ul></li></ul></li><li><p>jsx 使用严格标签语法，单一型标签必须使用 / 结束符</p><pre><code class="language-react">      const div = &lt;div /&gt;;
+      const input = &lt;input /&gt;;
+</code></pre></li><li><p>jsx 变量有且仅有一个根数据 (因为一个变量只能同事存储一种数据类型)</p><pre><code class="language-react">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;./react.development.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./react-dom.development.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+    &lt;!-- 下面script type表示内部的代码使用上面在线转译工具转化为js代码 --&gt;
+    &lt;script type=&quot;text/babel&quot;&gt;
+
+        const app = document.getElementById('app')
+        const root = ReactDOM.createRoot(app)
+
+        // react 使用 jsx 语法(JavaScript XML) 在原有的js基础上增加了xml语法(严格标签语法单一型标签必须要有结束符号)
+
+        // const test = &lt;a href=&quot;http://www.bilibili.com&quot;&gt;hello&lt;/a&gt;
+        // 上面的 jsx 语法创建的 React 元素,本质上会被 babel 转译为 React.createElement()
+        /*
+        const test = React.createElement('a', &#123;
+            href: 'http://www.bilibili.com',
+            children: 'hello',
+            className: 'demo'
+        &#125;)
+
+        const div = React.createElement('div', &#123;
+            children: test
+        &#125;)
+        */
+        // react 的本质上就是原生的js    
+
+        // jsx 的语法,在任何react元素中,无论属性差值还是文本差值统一使用 &quot;&#123;jsx表达式&#125;&quot;
+        // jsx 表达式 变量的引用\ 函数的调用 \ 运算符 \ jsx 本身
+        //
+        //  但是 声明变量 、条件控制语句(if for while)等等这些不属于jsx表达式 
+
+        let num = 7
+
+        let h2 = &lt;h2&gt;hello&lt;/h2&gt;
+
+        const demo = (
+            &lt;div&gt;
+                &lt;h2&gt;&#123;num&#125;&lt;/h2&gt;
+                &lt;p className=&#123;num &gt;= 18 ? 'active' : ''&#125;&gt;&#123;num &gt;= 18 ? '成年' : '未成年'&#125;&lt;/p&gt;
+                &lt;div&gt;&#123;h2&#125;&lt;/div&gt;
+            &lt;/div&gt;
+        )
+
+
+
+        // jsx的文本差值语法是自动预防xss攻击
+
+        let str = '&lt;h2&gt;hello&lt;/h2&gt;'
+
+        const element = &lt;div&gt;&#123;str&#125;&lt;/div&gt; // 渲染时 str 变量的值将会以文本节点字符串的形式插入到页面中
+
+        // 如果需要将字符串以html元素的形式插入到React元素节点内部需要使用一个特殊属性
+        const element1 = &lt;div dangerouslySetInnerHTML=&#123;&#123; __html: str &#125;&#125;&gt;&lt;/div&gt;
+
+
+        // jsx 使用严格标签语法,单一型标签必须使用 /结束符
+
+        const div = &lt;div /&gt;
+        const input = &lt;input /&gt;
+
+        // jsx 变量有且仅有一个根数据 (因为一个变量只能同事存储一种数据类型)
+
+        // const el = &lt;div&gt;1&lt;/div&gt; &lt;div&gt;2&lt;/div&gt; 错误
+
+        // const el = React.createElement('div',&#123;children: '1'&#125;)  React.createElement('div',&#123;children: '2'&#125;)
+
+        const el = [&lt;div children=&#123;1&#125;&gt;&lt;/div&gt;, &lt;div&gt;2&lt;/div&gt;]
+
+        root.render(el)
+
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre></li></ul><h3 id="react的diff算法"><a class="anchor" href="#react的diff算法">#</a> react 的 diff 算法</h3><ul><li><p>vue 的 diff 算法与 react 的 diff 算法区别：</p><pre><code class="language-react">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;./react.development.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./react-dom.development.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./babel.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./vue@3.3.4.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+    &lt;!-- 下面script type表示内部的代码使用上面在线转译工具转化为js代码 --&gt;
+    &lt;script type=&quot;text/babel&quot;&gt;
+      const app = document.getElementById(&quot;app&quot;);
+      const root = ReactDOM.createRoot(app);
+
+      function render() &#123;
+        let date = new Date().toLocaleTimeString();
+
+        let el = (
+          &lt;div&gt;
+            &lt;h2&gt;React时钟&lt;/h2&gt;
+            &lt;p&gt;当前事件 &#123;date&#125;&lt;/p&gt;
+          &lt;/div&gt;
+        );
+
+        root.render(el);
+      &#125;
+
+      render();
+
+      setInterval(render, 1000);
+    &lt;/script&gt;
+
+    &lt;div id=&quot;demo&quot;&gt;
+      &lt;h2&gt;Vue时钟&lt;/h2&gt;
+      &lt;p&gt;当前事件 &#123;&#123; date &#125;&#125;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+      const &#123; createApp &#125; = Vue;
+
+      createApp(&#123;
+        data() &#123;
+          return &#123;
+            date: new Date().toLocaleTimeString(),
+          &#125;;
+        &#125;,
+        mounted() &#123;
+          setInterval(() =&gt; &#123;
+            this.date = new Date().toLocaleTimeString();
+          &#125;, 1000);
+        &#125;,
+      &#125;).mount(&quot;#demo&quot;);
+    &lt;/script&gt;
+
+    &lt;!-- 对比页面中 React 与 Vue 时间发生改变时,更新的节点不同可以发现, Vue 更新整个p元素节点,而react只更新了 &#123; date &#125; 差值的文本节点
+
+原因: React 元素都是 immutable 不可变的。当元素被创建之后，你是无法改变其内容或属性的。一个元素就好像是动画里的一帧，它代表应用界面在某一时间点的样子。
+
+React 虚拟DOM 通过新旧 React 元素对象的替换告诉 ReactDOM 更新页面(响应式), 虚拟DOM是新的直接替换掉旧的,但是如果真实dom也直接使用替换是比较影响性能的,真实DOM更新使用了react Diff算法
+
+ReactDOM 会比较新旧DOM对象类型是否不同,若不同卸载当前DOM创建新的DOM, 若相同再比较内部的属性或子节点,在更新时只会更新改变的部分(递归比较)
+
+所以 react diff算法可以总结成一句话, react的 diff算法只会更新必要的部分 --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre></li></ul><h3 id="react组件"><a class="anchor" href="#react组件">#</a> react 组件</h3><ul><li><p>React 中有两种组件分别是 class 组件 (类组件) 、函数组件</p></li><li><p>因为现在主流是函数式编程，所以开发中流行使用函数式组件配合 hook (钩子函数)</p></li><li><p>React 规定无论函数组件还是类组件，组件名首字母必须大写 (现在 React 项目中默认指定组件名必须又两个及以上单词组成)</p></li><li><p>类组件：</p><ul><li><p>类组件无法使用 hook 所以必须继承 React 提供的 Component ( <code>组件类</code> ) 拿到相关生命周期响应式方法</p><pre><code class="language-react">      class MyComponent extends React.Component &#123;
+        constructor(props) &#123;
+          super(props);
+
+          // 类组件的数据存放在 state 的属性中
+          this.state = &#123;
+            name: &quot;老王&quot;,
+            age: 12,
+          &#125;;
+        &#125;
+
+        addAge() &#123;
+          console.log(this, &quot;aaa&quot;);
+          // React 修改state因为不像vue给属性绑了get set
+          // 他修改state需要用到 this.setState
+
+          // this.state.age++ 无效
+
+          this.setState(&#123;
+            age: this.state.age + 1, // React 属性不可变性,请使用替换的方式修改数据
+          &#125;);
+        &#125;
+
+        // react 的类组件有一个必须设置的生命周期 render 表示组件渲染时执行的函数, 该函数必须要有返回值,返回的值就是当前组件渲染在页面上的样子
+        // 返回值 必须是React Node类型(能渲染在页面上的数据类型) 不能是对象及函数, 在React中普通对象不是 React child
+        render() &#123;
+          let &#123; name, age &#125; = this.state;
+
+          return (
+            &lt;div&gt;
+              &lt;h3&gt;username: &#123;name&#125;&lt;/h3&gt;
+              &lt;p&gt; age: &#123;age&#125; &lt;/p&gt;
+              &#123;/* 注意react事件绑定会导致React组件内的方法中this指向错误, 下面的代码调用后this为undefined */&#125;
+              &lt;button onClick=&#123;this.addAge&#125;&gt;add age1&lt;/button&gt;
+              &#123;/* 解决方法使用箭头函数 */&#125;
+              &lt;button onClick=&#123;() =&gt; this.addAge()&#125;&gt;add age2&lt;/button&gt;
+            &lt;/div&gt;
+          );
+        &#125;
+      &#125;
+</code></pre></li></ul></li><li><p>函数组件：</p><ul><li><p>React 的函数组件必须是使用 function 声明的函数不能使用箭头函数，React 函数组件与没有区别只是函数名的首字母必须大写在 React 脚手架中默认规定组件名至少包含两个单词</p><pre><code class="language-react">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;./react.development.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./react-dom.development.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+    &lt;!-- 下面script type表示内部的代码使用上面在线转译工具转化为js代码 --&gt;
+    &lt;script type=&quot;text/babel&quot;&gt;
+
+        const app = document.getElementById('app')
+        const root = ReactDOM.createRoot(app)
+
+        const &#123; useState &#125; = React
+
+
+        // React的函数组件必须是使用function声明的函数不能使用箭头函数, React函数组件与没有区别只是函数名的首字母必须大写在React脚手架中默认规定组件名至少包含两个单词
+
+        function MyComponent() &#123;
+            // 函数组件的返回值必须是 React Node
+            // 在早期 react 函数组件当时被称为无状态组件,意思是函数组件无法创建存放数据的状态,早期函数组件只负责一些简单UI封装的组件
+            // 后续React版本的更新中提出Hook的概念,使得函数式编程一下火了起来, 函数式组件配合react Hook 可以在函数组件中创建state与声明了
+            // 使用React 提供 useState hook创建函数组件的状态,因为React的状态都是不可变的,useState 返回一个数组,数组第一项是state的值,而第二项是修改该state的方法
+            const [name, setName] = useState('老王')
+            const [age, setAge] = useState(19)
+
+            function test() &#123;
+                console.log(213);
+                
+                setAge(age + 1)
+                
+                // setAge(age + 1) // 这里仍然是旧的age
+                // 注意: 上面的代码理论上来说应该是 age+2 , 但是真实效果是只加了一, 原因是 setAge 可能是异步的
+
+                // setState 支持两种格式格式一: setAge(新值) 格式二 setAge((newAge) =&gt; newAge + 1)  这里的newAge\就是上次更新后最新的age值,返回值就是再次更新替换的新值
+
+                setAge(newAge =&gt; newAge + 1)
+            
+            &#125;
+
+            return (
+                &lt;div onClick=&#123;test&#125;&gt;
+                    &lt;p&gt;name : &#123;name&#125; &lt;/p&gt;
+                    &lt;p&gt;age : &#123;age&#125;&lt;/p&gt;
+                &lt;/div&gt;
+            )
+        &#125;
+
+
+        root.render(&lt;MyComponent /&gt;)
+
+        // 使用官方脚手架创建 react 项目
+
+        // npx create-react-app my-app --template typescript
+
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre></li></ul></li></ul><div class="tags"><a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a> <a href="/tags/react/" rel="tag"><i class="ic i-tag"></i> react</a></div></div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i> </span><span class="text">更新于</span> <time title="修改时间：2023-06-26 17:41:37" itemprop="dateModified" datetime="2023-06-26T17:41:37+08:00">2023-06-26</time></span></div><div class="reward"><button><i class="ic i-heartbeat"></i> 赞赏</button><p>请我喝[茶]~(￣▽￣)~*</p><div id="qr"><div><img data-src="/images/wechatpay.png" alt="Rinkuru 微信支付"><p>微信支付</p></div><div><img data-src="/images/alipay.png" alt="Rinkuru 支付宝"><p>支付宝</p></div></div></div><div id="copyright"><ul><li class="author"><strong>本文作者： </strong>Rinkuru <i class="ic i-at"><em>@</em></i>リンクル</li><li class="link"><strong>本文链接：</strong> <a href="http://124.221.182.148/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/" title="React：初识React">http://124.221.182.148/2023/06/26/React：初识React/</a></li><li class="license"><strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/2023/06/13/node%EF%BC%9Akoa%E6%A1%86%E6%9E%B6/" itemprop="url" rel="prev" data-background-image="&#x2F;2023&#x2F;06&#x2F;13&#x2F;node%EF%BC%9Akoa%E6%A1%86%E6%9E%B6&#x2F;assets&#x2F;01.png" title="node：koa框架"><span class="type">上一篇</span> <span class="category"><i class="ic i-flag"></i> node</span><h3>node：koa框架</h3></a></div><div class="item right"></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-jsx-%E4%B9%A6%E5%86%99%E6%A0%87%E7%AD%BE%E8%AF%AD%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">使用 JSX 书写标签语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E7%9A%84diff%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">react 的 diff 算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E7%BB%84%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">react 组件</span></a></li></ol></div><div class="related panel pjax" data-title="系列文章"><ul><li class="active"><a href="/2023/06/26/React%EF%BC%9A%E5%88%9D%E8%AF%86React/" rel="bookmark" title="React：初识React">React：初识React</a></li></ul></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="image" itemprop="image" alt="Rinkuru" data-src="/images/avatar.png"><p class="name" itemprop="name">Rinkuru</p><div class="description" itemprop="description">薄っぺらな天才は、才能が透けて見える。天才は、才能を忘れさせる。</div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">67</span> <span class="name">文章</span></a></div><div class="item categories"><a href="/categories/"><span class="count">19</span> <span class="name">分类</span></a></div><div class="item tags"><a href="/tags/"><span class="count">20</span> <span class="name">标签</span></a></div></nav><div class="social"><span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL25pa2FpZG9vLXNoaW5rdQ==" title="https:&#x2F;&#x2F;github.com&#x2F;nikaidoo-shinku"><i class="ic i-github"></i></span> <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9zZXJpa2FfbmlpbWk=" title="https:&#x2F;&#x2F;twitter.com&#x2F;serika_niimi"><i class="ic i-twitter"></i></span></div><ul class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a><ul class="submenu"><li class="item"><a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a></li><li class="item"><a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a></li><li class="item"><a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a></li></ul></li><li class="item"><a href="/friends/" rel="section"><i class="ic i-heart"></i>番剧</a></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-magic"></i>链表</a><ul class="submenu"><li class="item"><a href="/links/" rel="section"><i class="ic i-sakura"></i>外链</a></li></ul></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-user"></i>关于</a><ul class="submenu"><li class="item"><a href="/about/" rel="section"><i class="ic i-star"></i>个人</a></li></ul></li></ul></div></div></div><ul id="quick"><li class="prev pjax"></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/htmlcss/" title="分类于 html+css">html+css</a></div><span><a href="/2021/12/20/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A3-%E5%AE%9A%E4%BD%8D/" title="前端学习笔记：3.定位">前端学习笔记：3.定位</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/Hooks/" title="分类于 Hooks">Hooks</a></div><span><a href="/2023/03/22/Hooks%EF%BC%9A%E5%B8%B8%E7%94%A8hooks%E5%B0%81%E8%A3%85/" title="Hooks：常用hooks封装">Hooks：常用hooks封装</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/htmlcss/" title="分类于 html+css">html+css</a></div><span><a href="/2023/04/06/CSS3%EF%BC%9A%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E5%8F%8A%E6%93%8D%E4%BD%9C/" title="CSS3：常用属性及操作">CSS3：常用属性及操作</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/DOM/" title="分类于 DOM">DOM</a></div><span><a href="/2023/03/22/DOM%EF%BC%9A%E5%85%B8%E5%9E%8B%E4%B8%8E%E9%9A%BE%E7%82%B9%E7%A4%BA%E4%BE%8B/" title="DOM：典型与难点示例">DOM：典型与难点示例</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/htmlcss/" title="分类于 html+css">html+css</a></div><span><a href="/2021/12/30/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A4-%E5%AD%97%E4%BD%93/" title="前端学习笔记：4.字体">前端学习笔记：4.字体</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/Git/" title="分类于 Git">Git</a></div><span><a href="/2023/04/25/Git%EF%BC%9AGit%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" title="Git：Git使用文档">Git：Git使用文档</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/typescript/" title="分类于 typescript">typescript</a></div><span><a href="/2022/03/25/typescript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A1-typescript%E5%9F%BA%E7%A1%80(1)/" title="typescript学习笔记：1.typescript基础(1)">typescript学习笔记：1.typescript基础(1)</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/javascript/" title="分类于 javascript">javascript</a></div><span><a href="/2022/03/18/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A7-%E7%BB%A7%E6%89%BF-%E5%90%ABes6-%E3%80%81%E5%A4%9A%E7%A7%8D%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F/" title="JavaScript学习笔记：7.继承(含es6)、多种继承方式">JavaScript学习笔记：7.继承(含es6)、多种继承方式</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/javascript/" title="分类于 javascript">javascript</a></div><span><a href="/2021/12/22/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A1-Math%E5%AF%B9%E8%B1%A1/" title="JavaScript学习笔记：1.Math对象">JavaScript学习笔记：1.Math对象</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/programs/" title="分类于 编程">编程</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/" title="分类于 前端">前端</a> <i class="ic i-angle-right"></i> <a href="/categories/programs/web/webpack/" title="分类于 webpack">webpack</a></div><span><a href="/2023/04/26/webpack%EF%BC%9Awebpack%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/" title="webpack：webpack配置及使用">webpack：webpack配置及使用</a></span></li></ul></div><div><h2>最新评论</h2><ul class="leancloud-recent-comment"></ul></div></div><div class="status"><div class="copyright">&copy; 2010 – <span itemprop="copyrightYear">2023</span> <span class="with-love"><i class="ic i-sakura rotate"></i> </span><span class="author" itemprop="copyrightHolder">Rinkuru @ Rinkuru</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i> </span><span title="站点总字数">562k 字</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="ic i-coffee"></i> </span><span title="站点阅读时长">8:31</span></div><div class="powered-by">基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span></div></div></div></footer></div><script data-config type="text/javascript">var LOCAL={path:"2023/06/26/React：初识React/",favicon:{show:"（●´3｀●）やれやれだぜ",hide:"(´Д｀)大変だ！"},search:{placeholder:"文章搜索",empty:"关于 「 ${query} 」，什么也没搜到",stats:"${time} ms 内找到 ${hits} 条结果"},valine:!0,fancybox:!0,copyright:'复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',ignores:[function(e){return e.includes("#")},function(e){return new RegExp(LOCAL.path+"$").test(e)}]}</script><script src="https://cdn.polyfill.io/v3/polyfill.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/pace/1.0.2/pace.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script src="https://unpkg.com/whatwg-fetch@3.4.0/dist/fetch.umd.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/animejs/3.2.0/anime.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/algoliasearch/4.12.1/algoliasearch-lite.umd.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantsearch.js/4.39.0/instantsearch.production.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/lozad.js/1.16.0/lozad.min.js"></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/quicklink/2.2.0/quicklink.umd.min.js"></script><script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/??jquery/3.5.1/jquery.min.js,fancybox/3.5.7/jquery.fancybox.min.js,justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" async></script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.12.0/contrib/copy-tex.min.js" async></script><script src="https://unpkg.com/frappe-charts@1.5.0/dist/frappe-charts.min.iife.js"></script><script src="/js/app.js?v=0.2.5"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({pluginRootPath:"live2dw/",pluginJsPath:"lib/",pluginModelPath:"assets/",tagMode:!1,log:!1,model:{jsonPath:"/live2dw/assets/kasumi_event128.model.json"},display:{position:"right",width:100,height:200},mobile:{show:!0},react:{opacity:.6}})</script></body></html><!-- rebuild by hrmmi -->
